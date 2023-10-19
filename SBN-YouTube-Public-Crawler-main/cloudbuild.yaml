@@ -1,0 +1,14 @@
+steps:
+  # 패키지 빌드
+  - name: 'python:3.9'
+    entrypoint: 'python'
+    args: ['setup.py', 'sdist']
+
+  # Artifact Registry에 업로드
+  - name: 'python:3.9'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pip install twine keyrings.google-artifactregistry-auth
+        twine upload --repository-url https://${_LOCATION}-python.pkg.dev/$PROJECT_ID/${_REPOSITORY}/ dist/*
