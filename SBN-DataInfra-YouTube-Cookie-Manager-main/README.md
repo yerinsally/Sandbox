@@ -9,7 +9,7 @@
     playwright install
     playwright codegen instagram.com
     ```
-3. 만약 오류난다면, Powershell 관리자 권한으로 실행 후 코드 차례대로 입력
+2. 만약 오류난다면, Powershell 관리자 권한으로 실행 후 코드 차례대로 입력
     ```
     Set-ExecutionPolicy RemoteSigned
     Get-ExecutionPolicy # RemoteSigned
